@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a_ws_gps.model.ListActivity;
+
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeAct() {
-        Intent in = new Intent(this, MainActivity2.class);
+        Intent in = new Intent(this, ListActivity.class);
         startActivity(in);
     }
 
@@ -106,7 +108,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLocationChanged(@NonNull Location location) {
             displayLocation(location);
+            }
 
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(@NonNull String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(@NonNull String provider) {
 
             }
         };
